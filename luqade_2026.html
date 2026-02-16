@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luqade Scrap Investment | Premium Metal Recycling & Sales</title>
+    <meta name="description"
+        content="Luqade Scrap Investment: Expert dealers in Aluminum, Brass, Copper, and various metal types. Based in Oyo, Nigeria.">
+    <style>
+        :root {
+            /* Color Palette - Metallic Professional */
+            --color-navy: #0a192f;
+            --color-navy-light: #172a45;
+            --color-gold: #d4af37;
+            --color-gold-light: #f1c40f;
+            --color-silver: #ccd6f6;
+            --color-silver-dark: #8892b0;
+            --color-orange-light: #ffca28;
+            --color-white: #e6f1ff;
+
+            /* Typography - Clean Sans-Serif */
+            --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
+            --font-heading: 'Inter', system-ui, sans-serif;
+
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 8rem;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background-color: var(--color-navy);
+            color: var(--color-silver);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: var(--font-heading);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-white);
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            margin-bottom: var(--space-sm);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: var(--space-md);
+            color: var(--color-gold);
+        }
+
+        h3 {
+            font-size: 1.25rem;
+            margin-bottom: var(--space-xs);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition-smooth);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-md);
+        }
+
+        .section-padding {
+            padding: var(--space-lg) 0;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 25, 47, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(204, 214, 246, 0.1);
+            padding: var(--space-sm) 0;
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--color-gold);
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: var(--space-md);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .nav-links a:hover {
+            color: var(--color-gold);
+        }
+
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.8)), url('hero-metal.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 900px;
+        }
+
+        .hero-content h1 {
+            background: linear-gradient(45deg, var(--color-white), var(--color-silver));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto var(--space-md);
+            color: var(--color-silver-dark);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: transparent;
+            color: var(--color-orange-light);
+            font-weight: 600;
+            border-radius: 4px;
+            border: 1px solid var(--color-orange-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.85rem;
+        }
+
+        .btn:hover {
+            background-color: rgba(255, 202, 40, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md);
+        }
+
+        .card {
+            background: var(--color-navy-light);
+            padding: var(--space-md);
+            border-radius: 4px;
+            border-left: 3px solid transparent;
+            transition: var(--transition-smooth);
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-left-color: var(--color-gold);
+        }
+
+        .card h3 {
+            color: var(--color-gold);
+        }
+
+        .card p {
+            font-size: 0.95rem;
+            color: var(--color-silver-dark);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: var(--space-sm);
+            display: block;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-lg);
+        }
+
+        .contact-info div {
+            margin-bottom: var(--space-md);
+        }
+
+        .contact-info h4 {
+            color: var(--color-gold);
+            margin-bottom: var(--space-xs);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .contact-info p {
+            font-size: 1rem;
+        }
+
+        .contact-form {
+            background: var(--color-navy-light);
+            padding: var(--space-md);
+            border-radius: 4px;
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-sm);
+        }
+
+        label {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--color-gold);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            background: var(--color-navy);
+            border: 1px solid rgba(204, 214, 246, 0.1);
+            border-radius: 4px;
+            color: var(--color-white);
+            font-family: var(--font-primary);
+            font-size: 0.9rem;
+            outline: none;
+            transition: var(--transition-smooth);
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--color-gold);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            background: var(--color-gold);
+            color: var(--color-navy);
+            border: none;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            margin-top: var(--space-sm);
+        }
+
+        .submit-btn:hover {
+            background: var(--color-gold-light);
+            transform: translateY(-2px);
+        }
+
+        #formFeedback {
+            display: none;
+            margin-top: 15px;
+            color: var(--color-gold);
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        footer {
+            padding: var(--space-md) 0;
+            text-align: center;
+            border-top: 1px solid rgba(204, 214, 246, 0.1);
+            margin-top: var(--space-xl);
+            font-size: 0.85rem;
+            color: var(--color-silver-dark);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+    <!-- Supabase SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">LUQADE SCRAP</div>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#materials">Materials</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero">
+        <div class="hero-content container">
+            <h1>Luqade Scrap Investment</h1>
+            <p>Your Trusted Partner in Premium Metal Recycling and Sales. Providing sustainable and professional metal
+                investment solutions.</p>
+
+
+            <a href="https://wa.me/2347051411106" class="btn" target="_blank" style="margin-top: 25px;">Message Us on
+                WhatsApp</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="materials" class="section-padding container">
+            <h2>Materials We Handle</h2>
+            <div class="materials-grid">
+                <div class="card">
+                    <span class="card-icon">🏗️</span>
+                    <h3>Aluminum</h3>
+                    <p>Sourcing and processing high-grade aluminum for industrial and commercial scrap solutions.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">⚡</span>
+                    <h3>Copper</h3>
+                    <p>Premium copper recycling with a focus on purity and efficient recovery from various scrap
+                        sources.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🎺</span>
+                    <h3>Brass</h3>
+                    <p>Expert handling of brass alloys, ensuring sustainable reuse for manufacturing and trade.</p>
+                </div>
+                <div class="card">
+                    <span class="card-icon">🔩</span>
+                    <h3>Other Metals</h3>
+                    <p>Consolidated scrap services for steel, iron, and specialized metallic investments.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section-padding" style="background: var(--color-navy-light)">
+            <div class="container">
+                <div style="max-width: 800px;">
+                    <h2>Reliability & Excellence</h2>
+                    <p style="font-size: 1.1rem; margin-top: var(--space-sm); color: var(--color-silver)">
+                        Based in Oyo, Luqade Scrap Investment provides professional metallic recycling services. We
+                        specialize in high-value metal trading, offering competitive rates and sustainable processing
+                        for all scrap types.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-padding container">
+            <h2>Connect With Us</h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div>
+                        <h4>Headquarters</h4>
+                        <p>Asunmoge area, Ajagba, Oyo, Nigeria</p>
+                    </div>
+                    <div>
+                        <h4>Direct Line (WhatsApp)</h4>
+                        <p><a href="https://wa.me/2347051411106"
+                                style="color: var(--color-orange-light)">07051411106</a></p>
+                    </div>
+                    <div>
+                        <h4>Email Inquiry</h4>
+                        <p><a href="mailto:luqademetals@gmail.com"
+                                style="color: var(--color-orange-light)">luqademetals@gmail.com</a></p>
+                    </div>
+                    <div>
+                        <h4>Social Media</h4>
+                        <p><a href="#" style="color: var(--color-orange-light)">Lawal Luqman (Facebook)</a></p>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form id="enquiryForm">
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required placeholder="Enter your full name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Enquiry Message</label>
+                            <textarea id="message" rows="4" required
+                                placeholder="How can we help you today?"></textarea>
+                        </div>
+                        <button type="submit" class="submit-btn" id="submitBtn">Send Enquiry</button>
+                    </form>
+                    <div id="formFeedback">
+                        Thank you for your enquiry! We will get back to you shortly.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Luqade Scrap Investment. All rights reserved. Professional Metal Trading.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        console.log('Luqade Scrap Investment Site Re-Styled');
+
+        // Supabase Configuration
+        const SUPABASE_URL = 'https://ogbqcqcntsopunnmwpaq.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9nYnFjcWNudHNvcHVubm13cGFxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzEyMzk1MzYsImV4cCI6MjA4NjgxNTUzNn0.EvbrOk8MmNx5C-XGNOhAKazm2QxUUoJeRhq4win80qQ';
+
+        if (typeof supabase === 'undefined') {
+            console.error('Supabase SDK not loaded. Please check your internet connection or the script tag.');
+        }
+
+        const _supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        console.log('Supabase initialized for project:', SUPABASE_URL);
+
+        const enquiryForm = document.getElementById('enquiryForm');
+        const formFeedback = document.getElementById('formFeedback');
+
+        enquiryForm.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submitBtn');
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            submitBtn.innerText = 'Sending...';
+            submitBtn.disabled = true;
+
+            try {
+                const { error } = await _supabase
+                    .from('inquiries')
+                    .insert([{ name, email, message }]);
+
+                if (error) throw error;
+
+                enquiryForm.style.display = 'none';
+                formFeedback.style.display = 'block';
+                formFeedback.style.color = 'var(--color-gold)';
+                formFeedback.innerText = 'Thank you for your enquiry! We will get back to you shortly.';
+                console.log('Enquiry successfully sent to Supabase.');
+            } catch (err) {
+                console.error('Error sending enquiry:', err.message);
+                submitBtn.innerText = 'Error! Try Again';
+                submitBtn.disabled = false;
+                formFeedback.style.display = 'block';
+                formFeedback.style.color = '#ff4d4d';
+                formFeedback.innerText = 'Something went wrong. Please try again later.';
+            }
+        });
+    </script>
+</body>
+
+</html>
