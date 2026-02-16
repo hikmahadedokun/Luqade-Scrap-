@@ -314,12 +314,61 @@
                 display: none;
             }
         }
+
+        /* Floating WhatsApp Button */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+            z-index: 1000;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition-smooth);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            background-color: #128c7e;
+            color: #FFF;
+        }
+
+        .whatsapp-success-btn {
+            display: block;
+            margin-top: 20px;
+            padding: 12px;
+            background: #25d366;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 4px;
+            transition: var(--transition-smooth);
+        }
+
+        .whatsapp-success-btn:hover {
+            background: #128c7e;
+        }
     </style>
     <!-- Supabase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 
 <body>
+    <a href="https://wa.me/2347051411106" class="whatsapp-float" target="_blank" title="Contact us on WhatsApp">
+        <svg style="width:35px;height:35px" viewBox="0 0 24 24">
+            <path fill="currentColor"
+                d="M12.04 2C6.5 2 2 6.5 2 12.04C2 13.81 2.46 15.5 3.33 17L2.05 21.78L7 20.45C8.41 21.23 10.15 21.75 12.04 21.75C17.58 21.75 22.08 17.25 22.08 11.71C22.08 6.17 17.58 2 12.04 2M12.04 20.15C10.32 20.15 8.78 19.68 7.45 18.81L7.15 18.61L4.2 19.38L4.97 16.5L4.75 16.14C3.82 14.65 3.33 13.06 3.33 11.41C3.33 6.6 7.24 2.69 12.04 2.69C16.84 2.69 20.75 6.6 20.75 11.41C20.75 16.22 16.84 20.15 12.04 20.15M16.5 13.86C16.5 13.86 15.76 13.5 15.62 13.43C15.47 13.36 15.36 13.33 15.25 13.47C15.15 13.62 14.85 13.97 14.76 14.08C14.67 14.19 14.58 14.2 14.43 14.13C14.28 14.06 13.81 13.9 13.24 13.4C12.78 13 12.48 12.5 12.39 12.33C12.3 12.18 12.38 12.11 12.46 12.03C12.53 11.96 12.62 11.85 12.72 11.74C12.82 11.62 12.85 11.55 12.92 11.4C13 11.25 12.96 11.13 12.91 11.03C12.86 10.93 12.5 10.06 12.36 9.71C12.22 9.38 12.08 9.42 12 9.42C11.9 9.42 11.79 9.42 11.68 9.42C11.58 9.42 11.43 9.46 11.3 9.59C11.17 9.72 10.82 10.06 10.82 10.74C10.82 11.43 11.32 12.1 11.39 12.2C11.46 12.3 12.38 13.71 13.79 14.32C15.19 14.92 15.48 15 15.79 14.97C16.09 14.94 16.78 14.56 16.92 14.15C17.06 13.74 17.06 13.4 17.02 13.33C16.97 13.26 16.86 13.22 16.71 13.15" />
+        </svg>
+    </a>
     <nav>
         <div class="container">
             <div class="logo">LUQADE SCRAP</div>
@@ -426,7 +475,10 @@
                         <button type="submit" class="submit-btn" id="submitBtn">Send Enquiry</button>
                     </form>
                     <div id="formFeedback">
-                        Thank you for your enquiry! We will get back to you shortly.
+                        <p>Thank you for your enquiry! We will get back to you shortly.</p>
+                        <a href="#" id="whatsappDirect" class="whatsapp-success-btn" target="_blank">
+                            Send Message on WhatsApp Direct
+                        </a>
                     </div>
                 </div>
             </div>
@@ -481,10 +533,15 @@
 
                 if (error) throw error;
 
+                // Configure WhatsApp Direct Link
+                const waNumber = '2347051411106';
+                const waText = encodeURIComponent(`Hello Luqade Scrap, I am ${name}. ${message}`);
+                const waLink = `https://wa.me/${waNumber}?text=${waText}`;
+                document.getElementById('whatsappDirect').href = waLink;
+
                 enquiryForm.style.display = 'none';
                 formFeedback.style.display = 'block';
                 formFeedback.style.color = 'var(--color-gold)';
-                formFeedback.innerText = 'Thank you for your enquiry! We will get back to you shortly.';
                 console.log('Enquiry successfully sent to Supabase.');
             } catch (err) {
                 console.error('Error sending enquiry:', err.message);
