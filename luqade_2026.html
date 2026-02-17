@@ -309,9 +309,38 @@
             color: var(--color-silver-dark);
         }
 
+        /* Mobile Navigation Adjustments */
+        .menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--color-gold);
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
         @media (max-width: 768px) {
+            .menu-btn {
+                display: block;
+            }
+
             .nav-links {
-                display: none;
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background: var(--color-navy);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: var(--transition-smooth);
+                box-shadow: -10px 0 30px rgba(2, 12, 27, 0.7);
+            }
+
+            .nav-links.active {
+                right: 0;
             }
         }
 
@@ -372,7 +401,8 @@
     <nav>
         <div class="container">
             <div class="logo">LUQADE SCRAP</div>
-            <ul class="nav-links">
+            <button class="menu-btn" id="menuBtn">☰</button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#hero">Home</a></li>
                 <li><a href="#materials">Materials</a></li>
                 <li><a href="#about">About</a></li>
@@ -501,6 +531,23 @@
             });
         });
         console.log('Luqade Scrap Investment Site Re-Styled');
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.innerText = navLinks.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.innerText = '☰';
+            });
+        });
 
         // Supabase Configuration
         const SUPABASE_URL = 'https://ogbqcqcntsopunnmwpaq.supabase.co';
